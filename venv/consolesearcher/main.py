@@ -12,7 +12,7 @@ from searchers.search_in_google import SearchInGoogle
 
 DEFAULT_USER_AGENT = {'User-Agent': 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:83.0) Gecko/20100101 Firefox/83.0'}
 
-if __name__ == '__main__':
+def main():
     interactor = ConsoleInteractor()
     interactor.processing_user_input()
     user_query = interactor.user_query
@@ -35,3 +35,7 @@ if __name__ == '__main__':
     }
 
     exported_sites = exporter.get(output_format).export_data(sites_dict)
+
+
+if __name__ == '__main__':
+    main()
