@@ -2,11 +2,10 @@
 
 
 class ConsoleInteractor():
-
-    DEFAULT_QUERY = 'PYTHON'
-    DEFAULT_SEARCH_ENGINE = '1'  # Google.com
+    DEFAULT_QUERY = "PYTHON"
+    DEFAULT_SEARCH_ENGINE = "1"  # Google.com
     DEFAULT_NUMBER_OF_RESULTS = 1
-    DEFAULT_OUTPUT_FORMAT = '1'  # console
+    DEFAULT_OUTPUT_FORMAT = "1"  # console
 
     def __init__(self):
         self.user_query = self.DEFAULT_QUERY
@@ -21,19 +20,19 @@ class ConsoleInteractor():
 
     def get_search_engine(self):
         console_search_engine = input("Select a search engine (1 - google.com, 2 - duckduckgo.com): ")
-        if console_search_engine in ('1', '2'):
+        if console_search_engine in ("1", "2"):
             self.search_engine = console_search_engine
 
     def get_number_of_results(self):
         console_number_of_results = input("Number of results: ")
         try:
             self.number_of_results = abs(int(console_number_of_results))
-        except:
-            pass
+        except TypeError:
+            print("The number of results must be a whole natural number. The default value will be used.")
 
     def get_output_format(self):
         console_output_format = input("Specify the output format (1 - console, 2 - json, 3 - xml, 4 - csv): ")
-        if console_output_format in ('1', '2', '3', '4'):
+        if console_output_format in ("1", "2", "3", "4"):
             self.output_format = console_output_format
 
     def processing_user_input(self):
@@ -41,4 +40,3 @@ class ConsoleInteractor():
         self.get_search_engine()
         self.get_number_of_results()
         self.get_output_format()
-

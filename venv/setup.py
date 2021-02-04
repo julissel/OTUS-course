@@ -22,7 +22,7 @@ setup(
             "consolesearcher = consolesearcher.main:main",
         ]
     },
-    python_require=">=3.7",
+    python_requires=">=3.8",
 )
 
 

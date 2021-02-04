@@ -1,5 +1,4 @@
 # coding: utf-8
-import csv
 from exporterstrategy import ExporterStrategy
 
 
