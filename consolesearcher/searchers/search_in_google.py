@@ -1,7 +1,7 @@
 # coding: utf-8
 import requests
 from bs4 import BeautifulSoup
-from searcherstrategy import SearcherStrategy
+from ..searcherstrategy import SearcherStrategy
 
 
 class SearchInGoogle(SearcherStrategy):

@@ -1,5 +1,5 @@
 # coding: utf-8
-from exporterstrategy import ExporterStrategy
+from ..exporterstrategy import ExporterStrategy
 
 
 class ExportToCsvFile(ExporterStrategy):
