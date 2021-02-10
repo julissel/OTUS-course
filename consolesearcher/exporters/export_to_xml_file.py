@@ -1,7 +1,7 @@
 # coding: utf-8
 from dicttoxml import dicttoxml
 from xml.dom.minidom import parseString
-from exporterstrategy import ExporterStrategy
+from consolesearcher.exporterstrategy import ExporterStrategy
 
 
 class ExportToXmlFile(ExporterStrategy):
