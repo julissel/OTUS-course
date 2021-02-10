@@ -3,7 +3,8 @@ import os
 import requests
 from bs4 import BeautifulSoup
 from selenium import webdriver
-from ..searcherstrategy import SearcherStrategy
+from selenium.webdriver.common.by import By
+from consolesearcher.searcherstrategy import SearcherStrategy
 
 os.environ["MOZ_HEADLESS"] = "1"
 DUCKDUCKGO_CLASS_NAME = "result__a"
@@ -37,7 +38,7 @@ class SearchInDuckduckgo(SearcherStrategy):
                 That is why we are using selenium for this case.'''
                 with webdriver.Firefox() as driver:
                     driver.get(self.url)
-                    self.results = driver.find_elements_by_name(DUCKDUCKGO_CLASS_NAME)
+                    self.results = driver.find_elements(By.CLASS_NAME, DUCKDUCKGO_CLASS_NAME)
 
                     for result in self.results:
                         self.link = result.get_attribute(HREF_ELEMENT)
