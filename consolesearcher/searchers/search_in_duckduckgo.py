@@ -37,15 +37,20 @@ class SearchInDuckduckgo(SearcherStrategy):
                 '''DuckDuckGo redirected our request to the JavaScript site.
                 That is why we are using selenium for this case.'''
                 with webdriver.Firefox() as driver:
+                    self.url = f"https://duckduckgo.com/html?q={user_query}&t=h_&ia=web"
                     driver.get(self.url)
                     self.results = driver.find_elements(By.CLASS_NAME, DUCKDUCKGO_CLASS_NAME)
+
+                    result_count = True
 
                     for result in self.results:
                         self.link = result.get_attribute(HREF_ELEMENT)
                         self.link_title = result.text
 
-                        if self.link and self.link_title:
+                        if self.link and self.link_title and result_count:
                             self.sites_dict[self.link] = self.link_title
+                            if len(self.sites_dict) == number_of_results:
+                                result_count = False
 
         else:
             print(self.response.status_code)
