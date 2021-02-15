@@ -18,12 +18,10 @@ setup(
     keywords=["console", "search"],
     classifiers=[],
     entry_points={
-        "consolesearcher": [
-            "consolesearcher = consolesearcher.main:main",
+        "console_scripts": [
+            "consolesearcher = consolesearcher.__main__:main",
         ]
     },
     python_requires=">=3.8",
+    install_requires=["dicttoxml", "requests", "bs4", "selenium"],
 )
-
-
-

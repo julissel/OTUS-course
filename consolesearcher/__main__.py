@@ -1,11 +1,11 @@
 # coding: utf-8
-from consoleinteractor import ConsoleInteractor
-from exporters.export_to_console import ExportToConsole
-from exporters.export_to_json_file import ExportToJsonFile
-from exporters.export_to_xml_file import ExportToXmlFile
-from exporters.export_to_csv_file import ExportToCsvFile
-from searchers.search_in_duckduckgo import SearchInDuckduckgo
-from searchers.search_in_google import SearchInGoogle
+from consolesearcher.consoleinteractor import ConsoleInteractor
+from consolesearcher.exporters.export_to_console import ExportToConsole
+from consolesearcher.exporters.export_to_json_file import ExportToJsonFile
+from consolesearcher.exporters.export_to_xml_file import ExportToXmlFile
+from consolesearcher.exporters.export_to_csv_file import ExportToCsvFile
+from consolesearcher.searchers.search_in_duckduckgo import SearchInDuckduckgo
+from consolesearcher.searchers.search_in_google import SearchInGoogle
 
 
 DEFAULT_USER_AGENT = {'User-Agent': 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:83.0) Gecko/20100101 Firefox/83.0'}
